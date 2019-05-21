@@ -670,6 +670,12 @@ public abstract class AbstractBrokerFactory
      * initializes. This happens after the configuration is fully loaded.
      */
     protected Object getFactoryInitializationBanner() {
+        try {
+            throw new Exception();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return _loc.get("factory-init", OpenJPAVersion.VERSION_NUMBER);
     }
 
